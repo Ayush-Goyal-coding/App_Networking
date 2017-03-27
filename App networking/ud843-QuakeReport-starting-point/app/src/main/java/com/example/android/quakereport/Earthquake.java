@@ -12,12 +12,13 @@ public class Earthquake {
     private double magnitude;
     private String location;
     private long date;
-
-    public Earthquake (double mMagnitude,String mLocation,long mDate)
+    private String url;
+    public Earthquake (double mMagnitude,String mLocation,long mDate,String mUrl)
     {
         magnitude = mMagnitude;
         location = mLocation;
         date = mDate;
+        url = mUrl;
     }
 
     public double getMagitude()
@@ -41,5 +42,9 @@ public class Earthquake {
         Date dateObject = new Date(date);
         SimpleDateFormat dateFormatter = new SimpleDateFormat("h:mm a");
         return dateFormatter.format(dateObject);
+    }
+    public String getUrl()
+    {
+        return url;
     }
 }

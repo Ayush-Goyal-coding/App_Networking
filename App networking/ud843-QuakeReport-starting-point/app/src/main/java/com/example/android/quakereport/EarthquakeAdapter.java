@@ -37,7 +37,7 @@ public class EarthquakeAdapter extends ArrayAdapter <Earthquake> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list,parent,false);
         }
 
-        Earthquake current = getItem(position);    //creating a earthquake object to set it
+        final Earthquake current = getItem(position);    //creating a earthquake object to set it
         /*
         setting magnitude text view
          */
@@ -73,7 +73,17 @@ public class EarthquakeAdapter extends ArrayAdapter <Earthquake> {
         TextView timeTextView = (TextView)listItemView.findViewById(R.id.time);
         timeTextView.setText(current.getTime());
 
+   /*   listItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(current.g));
+                startActivity(i);
 
+            }
+        });
+
+*/
         return listItemView;
 
     }

@@ -58,8 +58,9 @@ public final class QueryUtils {
                 Double mag  = property.getDouble("mag");
                 String place = property.getString("place");
                 long time  = property.getLong("time");
+                String url = property.getString("url");
 
-                earthquakes.add(new Earthquake(mag,place,time));
+                earthquakes.add(new Earthquake(mag,place,time,url));
             }
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
