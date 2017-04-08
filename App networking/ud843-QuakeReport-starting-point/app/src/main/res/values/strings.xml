@@ -16,6 +16,7 @@
 <resources>
     <string name="app_name">Quake Report</string>
     <string name="near_the">Near the</string>
-    <string name="Empty">No earthquakes found \nCheck your internet connection</string>
-    <string name="Starting">Loading..........</string>
+    <string name="Empty">No earthquakes found</string>
+
+    <string name="NoNet">Check Your Internet connection</string>
 </resources>
