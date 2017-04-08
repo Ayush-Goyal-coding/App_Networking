@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
      * Returns a formatted date and time string for when the earthquake happened.
      */
     private String getDateString(long timeInMilliseconds) {
-        SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy 'at' HH:mm:ss z");
+        SimpleDateFormat formatter = new SimpleDateFormat("EEE, dd MMM yyyy 'at' HH:mm:ss z");
         return formatter.format(timeInMilliseconds);
     }
 

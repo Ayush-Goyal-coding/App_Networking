@@ -28,7 +28,7 @@ public class Earthquake {
     public String getDate()
     {
         Date dateObject = new Date(date);
-        SimpleDateFormat dateFormatter = new SimpleDateFormat("DD MMM, yyyy");
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd MMM, yyyy");
         String dateToDisplay = dateFormatter.format(dateObject);
 
         return (dateToDisplay);
