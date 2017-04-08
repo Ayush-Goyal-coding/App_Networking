@@ -47,8 +47,11 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
         String JSONresponse = null;
         try {
             JSONresponse = makeHttpRequest(createUrl(url));
+
         } catch (IOException e) {
             Log.e(LOG_TAG, "Error with creating URL", e);
+
+
         }
 
 

@@ -25,6 +25,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -37,7 +39,8 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
     private static final String URL_OF_SITE = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=5&limit=10";
     private EarthquakeAdapter mAdapter;
     public static final String LOG_TAG = EarthquakeActivity.class.getName();
-
+    private TextView mEmptyStateTextView;
+    private ProgressBar SpinnerProgress;
 
 
         @Override
@@ -54,6 +57,8 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
             if (earthquakes != null && !earthquakes.isEmpty()) {
                 mAdapter.addAll(earthquakes);
             }
+            mEmptyStateTextView.setText(R.string.Empty);
+          SpinnerProgress.setVisibility(View.GONE);
         }
 
         @Override
@@ -86,6 +91,9 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
         // the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
         // because this activity implements the LoaderCallbacks interface).
         loaderManager.initLoader(1, null, this);
+
+
+
         earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -108,6 +116,15 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
         earthquakeListView.setAdapter(mAdapter);
-    }
+
+
+            mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
+            earthquakeListView.setEmptyView(mEmptyStateTextView);
+            SpinnerProgress = (ProgressBar) findViewById(R.id.spinner);
+            SpinnerProgress.setVisibility(View.VISIBLE);
+
+        }
+    /** TextView that is displayed when the list is empty */
+
 
 }
