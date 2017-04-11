@@ -3,7 +3,7 @@ package com.example.android.quakereport;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
-y;
+
 
 /**
  * Created by My on 11/04/17.
